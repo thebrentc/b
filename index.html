@@ -4,27 +4,51 @@
 <head>
   <meta charset="utf-8">
   <title>B</title>
-<!--  <link rel="stylesheet" href="b.css"/> -->
+	<link rel="stylesheet" href="css/b.css"/>
 </head>
 
 <body>
 
-  <div id="app">
+  <div id="b_app">
+  
+  <h1 id="b_brand"><a href="./">B</a></h1>
 
-  <iframe src="desktop.html"></iframe>
+  <!--<iframe src="desktop.html"></iframe>-->
    
   <footer>
+  
+  
   </footer>
+  
+  <foot>
+   <!-- add base js libraries into global namespace, then use require.js -->
+<!--  <script src="lib/json2.js"></script> -->
+  <script src="lib/jquery.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/backbone.js"></script>
+  <script src="lib/backbone.localStorage.js"></script>  
+  <script data-main="js/main" src="lib/require.js"></script>
+  
+  <!-- <script src="../lib/backbone.localStorage.js"></script>  -->
+	<!--<script src="b.js"></script> --> 
+	
+	<span id = "b_boot"></span>
+	<script>
+		$(
+			function() {
+<!--				$('#b_boot').append("json2.js ... " + "?" + "<br>"); -->
+				$('#b_boot').append("jquery.js ... " + ($.fn.jquery || "error") + "<br>");
+				$('#b_boot').append("underscore.js ... " + (_() || "error") + "<br>");
+				$('#b_boot').append("backbone.js ... " + (Backbone || "error") + "<br>");
+				$('#b_boot').append("backbone.localStorage.js ... " + (Backbone.localStorage || "?") + "<br>");				
+				$('#b_boot').append("require.js ... " /* + (RequireJS || "error") */ + "<br>");				
+			}
+		)
+	</script>
+	
+  </foot>
 
-  </div>
-  <!--
-  <script src="../lib/json2.js"></script>
-  <script src="../lib/jquery.js"></script>
-  <script src="../lib/underscore.js"></script>
-  <script src="../lib/backbone.js"></script>
-  <script src="../lib/backbone.localStorage.js"></script>
-  -->
-	<!--<script src="b.js"></script> -->
+  </div> <!-- b_app -->
   
   </body>
 </html>
